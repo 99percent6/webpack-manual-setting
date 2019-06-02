@@ -1,0 +1,26 @@
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 414px) {
+    flex-direction: column;
+  }
+}
+
+.additional-options {
+  flex-basis: 35%;
+  margin-top: 10px;
+  margin-right: 20px;
+
+  @media (max-width: 414px) {
+    flex-basis: 100%;
+  }
+}
