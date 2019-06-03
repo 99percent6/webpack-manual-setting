@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: "./src/index.js",
@@ -59,6 +60,18 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(css|scss)$/,
+        loader: 'postcss-loader',
+        options: {
+          plugins: [
+            autoprefixer({
+              browsers:['ie >= 8', 'last 4 version']
+            })
+          ],
+          sourceMap: true
+        }
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
